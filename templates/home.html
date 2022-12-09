@@ -10,6 +10,7 @@
     <div>
         <img src="{{ pet.photo_url }}" alt="picture of {{ pet.name }}">
         <p>{{ pet.name }} is {{ 'available!' if pet.available else 'not available.' }} </p>
+        <a href="/{{ pet.id }}">Edit {{ pet.name }}</a>
     </div>
     {% endfor %}
     <a href="/add">Add a Pet</a>
