@@ -34,7 +34,7 @@ def show_homepage():
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_pet():
-    '''Pett add form; handle adding'''
+    '''Pet add form; handle adding'''
 
     form = AddPetForm()
 
@@ -62,7 +62,7 @@ def add_pet():
         return render_template('add_pet.html', form=form)
 
 @app.route("/<int:petid>", methods=["GET", "POST"])
-def display_pet(petid):
+def edit_pet(petid):
     """ displays pet details and form to edit pet """
 
     pet = Pet.query.get_or_404(petid)

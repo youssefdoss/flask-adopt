@@ -32,7 +32,7 @@ class Pet(db.Model):
         default='')
     age = db.Column(db.String(10),
         nullable=False)
-    notes = db.Column(db.Text)
+    notes = db.Column(db.Text, nullable=False, default="")
     available = db.Column(db.Boolean,
         nullable=False,
         default=True)
