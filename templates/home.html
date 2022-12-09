@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>PETS!!!!!!</h1>
+{% for msg in get_flashed_messages() %}
+    <div>{{ msg }}</div>
+{% endfor %}
+<span>
+    {% for pet in pets %}
+    <div>
+        <img src="{{ pet.photo_url }}" alt="picture of {{ pet.name }}">
+        <p>{{ pet.name }} is {{ 'available!' if pet.available else 'not available.' }} </p>
+    </div>
+    {% endfor %}
+    <a href="/add">Add a Pet</a>
+</span>
+
+{% endblock %}
